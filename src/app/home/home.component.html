@@ -1,0 +1,42 @@
+<div>
+  <div class="panel-header">
+    <div class="font-semibold font-title">Contoso Intranet</div>
+
+  </div>
+
+  <div class="panel-body">
+
+
+
+    <button (click)="authenticate()" class="button-primary" [disabled]="authService.isAuthenticated">Authentification</button>
+    <button (click)="authenticateSilently()" class="button-primary" [disabled]="authService.isAuthenticated">Silent authentification</button>
+    <button (click)="logout()" class="button-secondary" [disabled]="!authService.isAuthenticated">Logout</button>
+    <button (click)="getGroup()" class="button-secondary" [disabled]="!authService.isAuthenticated">Get group informations</button>
+    <p></p>
+
+    <div class="font-semibold font-title2">Context</div>
+
+
+    <div class="font-base font-regular">Group Id</div>
+    <div class="font-base font-regular">{{groupId}}</div>
+
+    <div class="font-base font-regular">Upn</div>
+    <div class="font-base font-regular">{{upn}}</div>
+
+    <p></p>
+    <div class="font-semibold font-title2">Group members</div>
+
+    <ul>
+      <li *ngFor="let m of members">
+        <span>{{m.displayName}}</span>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="panel-footer">
+    <div class="font-base font-regular">footer</div>
+  </div>
+
+</div>

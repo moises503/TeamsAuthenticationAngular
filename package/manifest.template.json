@@ -1,0 +1,45 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.1/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.1",
+    "version": "0.0.1",
+    "id": "dd4af790-d8ff-47a0-87ad-486318272c7a",
+    "packageName": "com.spertus.msteams.myapp",
+    "developer": {
+        "name": "spertus",
+        "websiteUrl": "https://{{HTTPS_URL}}",
+        "privacyUrl": "https://{{HTTPS_URL}}/privacy",
+        "termsOfUseUrl": "https://{{HTTPS_URL}}/termsofuse"
+    },
+    "icons": {
+        "color": "teamsng5_88.png",
+        "outline": "teamsng5_44.png"
+    },
+    "name": {
+        "short": "myApp",
+        "full": "My App"
+    },
+    "description": {
+        "short": "short desc",
+        "full": "long desc"
+    },
+    "accentColor": "#235EA5",
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://{{HTTPS_URL}}/config",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "*.login.microsoftonline.com",
+        "teamsng5.azurewebsites.net",
+        "{{HTTPS_URL}}",
+        "*.graph.microsoft.com"
+    ]
+}
