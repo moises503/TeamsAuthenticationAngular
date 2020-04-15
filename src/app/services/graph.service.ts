@@ -68,4 +68,30 @@ export class GraphService {
 
         }
     }
+
+    public async getUserAsync(): Promise<MicrosoftGraph.User> {
+
+        try {
+
+            var client = Client.init({
+
+                authProvider: async (done) => {
+
+                    let access_token = await this.authService.tryGetAccessTokenAsync();
+
+                    if (!access_token)
+                        done('cant get token', undefined)
+                    else
+                        done(null, access_token); //first parameter takes an error if you can't get an access token
+                }
+            });
+
+            let group: MicrosoftGraph.User = await client.api(`/me`).get();
+
+            return group;
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }

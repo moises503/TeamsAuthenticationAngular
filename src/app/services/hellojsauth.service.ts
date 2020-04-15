@@ -8,7 +8,7 @@ var that: HellojsauthService;
 @Injectable()
 export class HellojsauthService {
 
-  private clientId: string = "78ff5451-e76a-47fa-9be9-0182b8789b80";
+  private clientId: string = "d73fd05d-4e1e-4332-9c5c-3eaaaed350e4";
   private upn: string = "";
   public isAuthenticated: boolean = false;
 

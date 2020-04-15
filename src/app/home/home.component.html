@@ -11,10 +11,10 @@
     <button (click)="authenticate()" class="button-primary" [disabled]="authService.isAuthenticated">Authentification</button>
     <button (click)="authenticateSilently()" class="button-primary" [disabled]="authService.isAuthenticated">Silent authentification</button>
     <button (click)="logout()" class="button-secondary" [disabled]="!authService.isAuthenticated">Logout</button>
-    <button (click)="getGroup()" class="button-secondary" [disabled]="!authService.isAuthenticated">Get group informations</button>
+    <button (click)="getUser()" class="button-secondary" [disabled]="!authService.isAuthenticated">Get User informations</button>
     <p></p>
 
-    <div class="font-semibold font-title2">Context</div>
+    <!--<div class="font-semibold font-title2">Context</div>
 
 
     <div class="font-base font-regular">Group Id</div>
@@ -24,12 +24,16 @@
     <div class="font-base font-regular">{{upn}}</div>
 
     <p></p>
-    <div class="font-semibold font-title2">Group members</div>
+    <div class="font-semibold font-title2">User Information</div>
+
+    <li *ngFor="let m of members">
+        <span>{{m.displayName}}</span>
+      </li>-->
 
     <ul>
-      <li *ngFor="let m of members">
-        <span>{{m.displayName}}</span>
-      </li>
+      <li><b>Display name:</b> {{user.displayName}}</li>
+      <li><b>Job title:</b> {{user.jobTitle}}</li>
+      <li><b>Email:</b> {{user.mail}}</li>
     </ul>
 
   </div>

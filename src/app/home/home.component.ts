@@ -21,12 +21,13 @@ export class HomeComponent implements OnInit {
   channelId: string;
   callbackReason: string;
   authentication: string;
-
+  user: any;
 
   async logout() {
     try {
       await this.authService.tryLogoutAsync();
       this.authentication = "";
+      this.user = null;
     } catch (error) {
       console.log(error);
     }
@@ -81,6 +82,20 @@ export class HomeComponent implements OnInit {
 
     }
   }
+
+  async getUser() {
+    if (this.authService.isAuthenticated) {
+
+      let user = await this.graphService.getUserAsync();
+
+      if (user) {
+        //alert(user);
+        this.user = user
+      }
+
+    }
+  }
+
   async ngOnInit() {
 
     microsoftTeams.initialize();
